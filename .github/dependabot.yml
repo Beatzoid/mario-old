@@ -8,16 +8,16 @@ updates:
   - package-ecosystem: "gradle"
     directory: "/"
     schedule:
+    interval: "daily"
+    commit-message:
+      prefix: "⬆️"
+      include: "scope"
+
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
       interval: "daily"
     commit-message:
-        prefix: "⬆️"
-        include: "scope"
-      
-   - package-ecosystem: "github-actions"
-     directory: "/"
-     schedule:
-      interval: "daily"
-     commit-message:
-        prefix: "⬆️"
-        include: "scope"
+      prefix: "⬆️"
+      include: "scope"
 
