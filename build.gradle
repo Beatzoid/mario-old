@@ -15,9 +15,9 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 }
 
-project.ext.lwjglVersion = "3.2.3"
-project.ext.jomlVersion = "1.10.0"
-project.ext.lwjglNatives = "natives-linux"
+project.ext.lwjglVersion = "3.3.0"
+project.ext.jomlVersion = "1.10.2"
+project.ext.lwjglNatives = "natives-windows"
 
 repositories {
     mavenCentral()

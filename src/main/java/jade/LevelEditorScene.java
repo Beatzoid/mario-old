@@ -3,20 +3,22 @@ package jade;
 import org.joml.Vector2f;
 import org.lwjgl.BufferUtils;
 import renderer.Shader;
+import util.Time;
 
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 
 import static org.lwjgl.opengl.GL20.*;
-import static org.lwjgl.opengl.GL30.*;
+import static org.lwjgl.opengl.GL30.glBindVertexArray;
+import static org.lwjgl.opengl.GL30.glGenVertexArrays;
 
 public class LevelEditorScene extends Scene {
     private float[] vertexArray = {
-             // Position              // Color
-             100.5f, 0.5f, 0.0f,       1.0f, 0.0f, 0.0f, 1.0f, // Bottom right - Red
-            0.5f,  100.5f, 0.0f,       0.0f, 1.0f, 0.0f, 1.0f, // Top left     - Green
-             100.5f,  100.5f, 0.0f ,      1.0f, 0.0f, 1.0f, 1.0f, // Top right    - Blue
-            0.5f, 0.5f, 0.0f,       1.0f, 1.0f, 0.0f, 1.0f, // Bottom left  - Yellow
+            // Position              // Color
+            100.5f, 0.5f, 0.0f, 1.0f, 0.0f, 0.0f, 1.0f, // Bottom right - Red
+            0.5f, 100.5f, 0.0f, 0.0f, 1.0f, 0.0f, 1.0f, // Top left     - Green
+            100.5f, 100.5f, 0.0f, 1.0f, 0.0f, 1.0f, 1.0f, // Top right    - Blue
+            0.5f, 0.5f, 0.0f, 1.0f, 1.0f, 0.0f, 1.0f, // Bottom left  - Yellow
     };
 
     // Must be in counter-clockwise order
@@ -87,6 +89,7 @@ public class LevelEditorScene extends Scene {
         defaultShader.use();
         defaultShader.uploadMat4f("uProjection", camera.getProjectionMatrix());
         defaultShader.uploadMat4f("uView", camera.getViewMatrix());
+        defaultShader.uploadFloat("uTime", Time.getTime());
         // Bind the VAO that we're using
         glBindVertexArray(vaoID);
 
