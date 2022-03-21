@@ -1,11 +1,13 @@
 package jade;
 
-import org.joml.*;
+import org.joml.Matrix4f;
+import org.joml.Vector2f;
+import org.joml.Vector3f;
 
 public class Camera {
 
-    private Matrix4f projectionMatrix, viewMatrix;
-    public Vector2f position;
+    private final Matrix4f projectionMatrix, viewMatrix;
+    public final Vector2f position;
 
     public Camera(Vector2f position) {
         this.position = position;
@@ -24,8 +26,8 @@ public class Camera {
         Vector3f cameraUp = new Vector3f(0.0f, 1.0f, 0.0f);
         this.viewMatrix.identity();
         viewMatrix.lookAt(new Vector3f(position.x, position.y, 20.0f),
-                                            cameraFront.add(position.x, position.y, 0.0f),
-                                            cameraUp);
+                cameraFront.add(position.x, position.y, 0.0f),
+                cameraUp);
 
         return this.viewMatrix;
     }

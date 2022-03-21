@@ -9,9 +9,9 @@ public abstract class Scene {
 
     protected Camera camera;
     private boolean isRunning = false;
-    protected List<GameObject> gameObjects = new ArrayList<>();
+    protected final List<GameObject> gameObjects = new ArrayList<>();
 
-    protected Renderer renderer = new Renderer();
+    protected final Renderer renderer = new Renderer();
 
     public Scene() {
 

@@ -7,9 +7,9 @@ import renderer.Texture;
 
 public class SpriteRenderer extends Component {
 
-    private Vector4f color;
-    private Vector2f[] texCoords;
-    private Texture texture;
+    private final Vector4f color;
+    //    private Vector2f[] texCoords;
+    private final Texture texture;
 
     public SpriteRenderer(Vector4f color) {
         this.color = color;
@@ -40,13 +40,12 @@ public class SpriteRenderer extends Component {
     }
 
     public Vector2f[] getTexCoords() {
-        Vector2f[] texCoords = {
+
+        return new Vector2f[]{
                 new Vector2f(1, 1),
                 new Vector2f(1, 0),
                 new Vector2f(0, 0),
                 new Vector2f(0, 1),
         };
-
-        return texCoords;
     }
 }

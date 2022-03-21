@@ -5,10 +5,10 @@ import java.util.List;
 
 public class GameObject {
 
-    public Transform transform;
+    public final Transform transform;
 
-    private String name;
-    private List<Component> components;
+    private final String name;
+    private final List<Component> components;
 
     public GameObject(String name) {
         this.name = name;

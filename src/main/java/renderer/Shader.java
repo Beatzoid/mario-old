@@ -8,7 +8,6 @@ import java.nio.FloatBuffer;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-import static org.lwjgl.opengl.GL11.GL_FALSE;
 import static org.lwjgl.opengl.GL20.*;
 
 public class Shader {
@@ -18,7 +17,7 @@ public class Shader {
 
     private String vertexSource;
     private String fragmentSource;
-    private String filepath;
+    private final String filepath;
 
     public Shader(String filepath) {
         this.filepath = filepath;
