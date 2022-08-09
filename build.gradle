@@ -8,11 +8,6 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
-    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
-    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
-}
-
 project.ext.lwjglNatives = "natives-windows"
 
 repositories {
